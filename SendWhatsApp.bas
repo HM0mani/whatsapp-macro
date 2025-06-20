@@ -35,6 +35,9 @@ Sub SendSingleWhatsAppMessage(rowNum As Long)
     ' Encode for WhatsApp
     message = Replace(template, Chr(10), "%0A")
     message = Replace(message, " ", "%20")
+    
+    ' TEST: Clear the message (so nothing is sent)
+    message = ""
 
     ' Build WhatsApp Web URL
     url = "https://web.whatsapp.com/send?phone=" & phone & "&text=" & message
